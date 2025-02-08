@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>traaavvypatty - Coming Soon</title>
     <style>
-        /* Ensure the body and html fill the entire screen */
         html, body {
             height: 100%;
             margin: 0;
@@ -45,25 +44,6 @@
             color: #ddd;
         }
 
-        .countdown {
-            font-size: 50px;
-            font-weight: 600;
-            margin: 30px 0;
-            color: #ff8c00;
-        }
-
-        .image-container {
-            margin-bottom: 30px;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            border-radius: 10px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-        }
-
         .cta-button {
             background-color: #ff5733;
             color: white;
@@ -81,12 +61,43 @@
             background-color: #ff2e00;
         }
 
+        .form-container {
+            display: none; /* Hide the form initially */
+            margin-top: 20px;
+        }
+
+        input[type="email"] {
+            padding: 12px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            background-color: #222;
+            color: white;
+        }
+
+        button[type="submit"] {
+            background-color: #ff5733;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #ff2e00;
+        }
+
         .small-text {
             font-size: 14px;
             color: #bbb;
         }
 
-        /* Styling for the footer */
         footer {
             font-size: 14px;
             color: #aaa;
@@ -98,52 +109,31 @@
 <body>
 
 <div class="container">
-    <div class="image-container">
-        <img src="https://via.placeholder.com/800x400?text=Coming+Soon" alt="Coming Soon Image">
-    </div>
     <h1>Something Amazing is Coming!</h1>
-    <p>We are building something exciting! Stay tuned and be the first to know.</p>
+    <p>We are building something exciting! Stay tuned for updates and be the first to know.</p>
+    <button class="cta-button" onclick="showForm()">Join Us Soon!</button>
 
-    <div class="countdown" id="countdown">
-        Loading Countdown...
+    <!-- Email Subscription Form (Initially hidden) -->
+    <div class="form-container" id="formContainer">
+        <p>Enter your email below to receive updates:</p>
+        <form id="emailForm" action="your-email-server-endpoint" method="POST">
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
     </div>
 
     <p class="small-text">Launching May 28th, 2025</p>
-    <button class="cta-button">Join Us Soon!</button>
-
     <footer>
         <p>&copy; 2025 traavvypatty. All Rights Reserved.</p>
     </footer>
 </div>
 
 <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("May 28, 2025 00:00:00").getTime();
-
-    // Update the countdown every 1 second
-    var x = setInterval(function() {
-
-        // Get the current date and time
-        var now = new Date().getTime();
-
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-
-        // Time calculations for days, hours, minutes, and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="countdown"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        // If the countdown is over, display some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "We are live!";
-        }
-    }, 1000);
+    // Show the email subscription form when the button is clicked
+    function showForm() {
+        document.querySelector('.form-container').style.display = 'block';
+        document.querySelector('.cta-button').style.display = 'none';
+    }
 </script>
 
 </body>

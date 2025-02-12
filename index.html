@@ -31,15 +31,15 @@
             justify-content: center;
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
             width: 100%;
-            max-width: 600px; /* Limit the width to prevent overflow */
+            max-width: 100%;
         }
         .countdown-box {
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1 1 100px; /* Allow items to grow and shrink, with a base size */
-            min-width: 80px; /* Prevent items from becoming too small */
-            text-align: center;
+            flex: 1 1 25%; /* Allow each box to take up 25% of the width */
+            max-width: 25%;
+            box-sizing: border-box;
         }
         .countdown {
             width: 140px;
@@ -77,15 +77,28 @@
             color: white;
             cursor: pointer;
         }
+        
+        /* Mobile Styles */
         @media (max-width: 768px) {
+            body {
+                justify-content: flex-start;  /* Align the content towards the top */
+                padding: 20px;
+                height: auto;  /* Allow for content to grow on small screens */
+            }
             h1 {
                 font-size: 2rem;
                 margin-bottom: 10px;
             }
             .countdown-container {
-                gap: 10px;
+                flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+                justify-content: center;
                 width: 100%;
-                max-width: none; /* Remove the max-width */
+                gap: 10px;
+            }
+            .countdown-box {
+                flex: 1 1 25%; /* Allow each box to take up 25% of the width */
+                max-width: 25%;
+                box-sizing: border-box;
             }
             .countdown {
                 width: 100px;
@@ -95,7 +108,11 @@
             .countdown-text {
                 font-size: 1rem;
             }
-            input[type="text"], button {
+            input[type="text"] {
+                width: 100%;
+                max-width: 250px;
+            }
+            button {
                 width: 100%;
                 max-width: 250px;
             }

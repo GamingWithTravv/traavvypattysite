@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>traavvypatty | coming soon..</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>traavvypatty - Coming Soon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #0A2540;
-            font-family: "Arial", sans-serif;
+            background-color: #1E3A5F;
+            font-family: "Poppins", sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,50 +31,48 @@
             font-family: 'Great Vibes', cursive;
             font-size: 60px;
             font-weight: bold;
-            color: #80C7FF;
+            color: #ADD8E6;
         }
 
         /* Countdown */
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .countdown-box {
-            width: 100px;
-            height: 100px;
+            background: #4682B4;
+            padding: 30px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
-            border: 3px solid #80C7FF;
+            text-align: center;
+            border: 4px solid #AFCDE7;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            font-size: 30px;
+            justify-content: center;
+        }
+
+        .countdown-box span {
+            display: block;
+            font-size: 40px;
             font-weight: bold;
-            color: #C2E1FF;
-            position: relative;
+            color: #FFFFFF;
         }
 
         .countdown-box small {
-            font-size: 14px;
-            color: #A9D7FF;
-            position: absolute;
-            bottom: -25px;
-        }
-
-        .colon {
-            font-size: 50px;
-            font-weight: bold;
-            color: #80C7FF;
-            display: flex;
-            align-items: center;
+            font-size: 16px;
+            color: #D0E1F9;
+            margin-top: 15px;
         }
 
         /* Email Form */
         .email-form {
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         .email-form input {
@@ -82,7 +80,7 @@
             width: 70%;
             max-width: 400px;
             border-radius: 25px;
-            border: 2px solid #80C7FF;
+            border: 2px solid #AFCDE7;
             font-size: 16px;
             text-align: center;
             margin-right: 10px;
@@ -91,13 +89,13 @@
 
         .email-form input:focus {
             outline: none;
-            border-color: #A9D7FF;
+            border-color: #D0E1F9;
         }
 
         .email-form button {
             padding: 12px 20px;
             border: none;
-            background-color: #80C7FF;
+            background-color: #4682B4;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -106,11 +104,36 @@
         }
 
         .email-form button:hover {
-            background-color: #A9D7FF;
+            background-color: #5A9FD4;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 40px;
+            }
+            .countdown {
+                flex-direction: row;
+                gap: 20px;
+                margin-top: 20px;
+            }
+            .countdown-box {
+                padding: 20px;
+                width: 90px;
+                height: 90px;
+                font-size: 35px;
+            }
+            .countdown-box span {
+                font-size: 30px;
+            }
+            .email-form input {
+                width: 80%;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <div class="logo">traavvypatty</div>
         
@@ -119,17 +142,14 @@
                 <span id="days">00</span>
                 <small>DAYS</small>
             </div>
-            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="hours">00</span>
                 <small>HOURS</small>
             </div>
-            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="minutes">00</span>
                 <small>MINUTES</small>
             </div>
-            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="seconds">00</span>
                 <small>SECONDS</small>
@@ -164,5 +184,6 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
+
 </body>
 </html>

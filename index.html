@@ -11,7 +11,7 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            background-color: #3a1c2a;
+            background-color: #0A2540;
             font-family: "Arial", sans-serif;
             display: flex;
             justify-content: center;
@@ -31,46 +31,50 @@
             font-family: 'Great Vibes', cursive;
             font-size: 60px;
             font-weight: bold;
-            color: #ffcccc;
+            color: #80C7FF;
         }
 
         /* Countdown */
         .countdown {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 30px;
-            flex-wrap: wrap;  /* Allow wrapping on smaller screens */
         }
 
         .countdown-box {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 25px;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;  /* Make the boxes circular */
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-        }
-
-        .countdown-box span {
-            display: block;
-            font-size: 40px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #80C7FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 30px;
             font-weight: bold;
-            color: #ffdddd;
+            color: #C2E1FF;
+            position: relative;
         }
 
         .countdown-box small {
             font-size: 14px;
-            color: #ffaaaa;
-            display: block; /* Ensure labels are below the numbers */
-            margin-top: 10px;
+            color: #A9D7FF;
+            position: absolute;
+            bottom: -25px;
+        }
+
+        .colon {
+            font-size: 50px;
+            font-weight: bold;
+            color: #80C7FF;
+            display: flex;
+            align-items: center;
         }
 
         /* Email Form */
         .email-form {
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
         .email-form input {
@@ -78,7 +82,7 @@
             width: 70%;
             max-width: 400px;
             border-radius: 25px;
-            border: 2px solid #ff5577;
+            border: 2px solid #80C7FF;
             font-size: 16px;
             text-align: center;
             margin-right: 10px;
@@ -87,13 +91,13 @@
 
         .email-form input:focus {
             outline: none;
-            border-color: #ff77a0;
+            border-color: #A9D7FF;
         }
 
         .email-form button {
             padding: 12px 20px;
             border: none;
-            background-color: #ff5577;
+            background-color: #80C7FF;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -102,36 +106,11 @@
         }
 
         .email-form button:hover {
-            background-color: #ff77a0;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 40px;
-            }
-            .countdown {
-                flex-direction: row;
-                gap: 20px;
-                margin-top: 20px;
-            }
-            .countdown-box {
-                padding: 20px;
-                width: 90px;
-                height: 90px;
-                font-size: 35px;
-            }
-            .countdown-box span {
-                font-size: 30px;
-            }
-            .email-form input {
-                width: 80%;
-            }
+            background-color: #A9D7FF;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="logo">traavvypatty</div>
         
@@ -140,14 +119,17 @@
                 <span id="days">00</span>
                 <small>DAYS</small>
             </div>
+            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="hours">00</span>
                 <small>HOURS</small>
             </div>
+            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="minutes">00</span>
                 <small>MINUTES</small>
             </div>
+            <div class="colon">:</div>
             <div class="countdown-box">
                 <span id="seconds">00</span>
                 <small>SECONDS</small>
@@ -182,6 +164,5 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
     </script>
-
 </body>
 </html>

@@ -8,97 +8,97 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e1e2f, #2c3e50);
-      color: #fff;
+      background: url('clock-background.png') repeat;
+      background-size: cover;
+      color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
     }
 
     header {
       text-align: center;
-      margin-bottom: 2rem;
+      padding: 2rem 1rem 1rem;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+    header img {
+      max-width: 300px;
+      width: 90%;
+      height: auto;
+      margin-bottom: 1rem;
     }
 
-    p.tagline {
-      font-style: italic;
-      color: #aaa;
+    main {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 90%;
+      margin: 1rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
     }
 
-    section {
-      max-width: 800px;
-      width: 100%;
-      background-color: #292942;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      margin-bottom: 2rem;
+    h1, h2 {
+      color: #00e0ff;
     }
 
-    h2 {
-      color: #00bcd4;
+    ul {
+      padding-left: 1.2rem;
     }
 
-    .join-btn {
+    a.join-btn {
       display: inline-block;
       padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
-      background-color: #00bcd4;
+      margin-top: 1.5rem;
+      background-color: #00e0ff;
       color: #000;
       font-weight: bold;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       transition: background-color 0.3s ease;
     }
 
-    .join-btn:hover {
-      background-color: #0097a7;
+    a.join-btn:hover {
+      background-color: #00b2cc;
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+      main {
+        padding: 1.2rem;
       }
 
-      section {
-        padding: 1rem;
+      header img {
+        max-width: 90%;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>TimeSteal SMP</h1>
-    <p class="tagline">A Minecraft survival experience where your time is your life.</p>
+    <img src="timesteal-logo.png" alt="TimeSteal SMP Logo" />
   </header>
 
-  <section>
-    <h2>What is TimeSteal SMP?</h2>
-    <p>TimeSteal SMP is a survival multiplayer server with a twist: everyone starts with 24 hours on the clock. Every time you die, you lose an hour. Kill someone? You steal their time. If your time runs out—you’re banned. It’s a game of skill, strategy, and survival.</p>
-  </section>
+  <main>
+    <section>
+      <h1>Welcome to TimeSteal SMP</h1>
+      <p>A Minecraft SMP where time is your greatest resource—and your biggest threat. Every player starts with 24 hours on the clock. Lose time by dying. Steal time by killing. Reach zero, and you’re out—for good.</p>
+    </section>
 
-  <section>
-    <h2>Looking for New Members</h2>
-    <p>We’re currently recruiting players to join the chaos. This server is perfect for:</p>
-    <ul>
-      <li>Content creators & streamers</li>
-      <li>OC roleplayers (original characters welcome!)</li>
-      <li>Minecraft survival enjoyers</li>
-      <li>People who love competition with story elements</li>
-    </ul>
-    <p>Everyone is welcome—as long as you’re active, respectful, and ready for action.</p>
-  </section>
+    <section>
+      <h2>Why Join?</h2>
+      <ul>
+        <li>Unique time-based survival challenge</li>
+        <li>Friendly and competitive playerbase</li>
+        <li>Supports content creators & original characters</li>
+        <li>Custom plugin with real-time time tracking</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Join Us</h2>
-    <p>Think you’ve got what it takes to survive the TimeSteal SMP? Apply now or contact us to learn more.</p>
-    <a class="join-btn" href="https://your-discord-invite-or-form-link.com" target="_blank">Join the Discord</a>
-  </section>
+    <section>
+      <h2>Apply Now</h2>
+      <p>We're actively looking for new players to bring chaos and creativity to the server. Whether you're a content creator or just love a good Minecraft twist, we want you!</p>
+      <a class="join-btn" href="https://your-discord-or-application-link.com" target="_blank">Join the Discord</a>
+    </section>
+  </main>
 </body>
 </html>
